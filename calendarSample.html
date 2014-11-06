@@ -1,0 +1,26 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="calendarSample.css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.1/angular.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script type="text/javascript" src="calendarSample.js"></script>
+    <title>calendarSample</title>
+</head>
+<body ng-app="calendarApp">
+    <div class="container">
+        <div class="jumbotron">
+            <h2>calendarSample!</h2>
+        </div>
+        <div ng-controller="CalendarCtrl" ng-Init="calendar = calendar()">
+            <table class="table table-striped">
+                <th ng-repeat="head in header()">{{head}}</th>
+                <tr ng-repeat="week in calendar">
+                    <td ng-repeat="day in week" class="today-{{day.color}}">{{day.dd}}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
